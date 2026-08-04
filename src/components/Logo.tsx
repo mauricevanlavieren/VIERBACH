@@ -47,8 +47,8 @@ export const Logo: React.FC<LogoProps> = ({ className = '', size = 'md' }) => {
       </div>
 
       <div className="flex flex-col">
-        <span className={`font-extrabold uppercase tracking-wider text-slate-900 ${textSizes[size]} leading-none`}>
-          VIER<span className="text-amber-500">BACH</span>
+        <span className={`font-extrabold uppercase tracking-wider text-amber-500 ${textSizes[size]} leading-none`}>
+          VIERBACH
         </span>
         <span className={`font-semibold tracking-wider text-slate-600 uppercase ${subtextSizes[size]} leading-tight`}>
           Hijskraanverhuur

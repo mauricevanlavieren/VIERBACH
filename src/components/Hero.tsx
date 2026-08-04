@@ -84,31 +84,30 @@ export const Hero: React.FC<HeroProps> = ({ hero, company, onOpenLightbox }) => 
 
           {/* Prominent AT6 Crane Photo Showcase */}
           <div className="lg:col-span-6">
-            <div className="relative group rounded-2xl overflow-hidden border border-slate-700/80 bg-slate-950 shadow-2xl">
-              {/* Photo */}
-              <img
-                src={hero.heroImageUrl}
-                alt="VIERBACH Spierings AT6 Mobiele Torenkraan"
-                className="w-full h-[360px] sm:h-[420px] lg:h-[460px] object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                referrerPolicy="no-referrer"
-                id="hero-crane-image"
-              />
+            <div className="group rounded-2xl overflow-hidden border border-slate-700/80 bg-slate-950 shadow-2xl">
+              {/* Photo — fully visible, no text overlay */}
+              <div className="relative">
+                <img
+                  src={hero.heroImageUrl}
+                  alt="VIERBACH Spierings AT6 Mobiele Torenkraan"
+                  className="w-full h-[360px] sm:h-[420px] lg:h-[460px] object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                  referrerPolicy="no-referrer"
+                  id="hero-crane-image"
+                />
 
-              {/* Gradient Overlay for Legibility */}
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80" />
+                {/* Photo Zoom Button */}
+                <button
+                  onClick={() => onOpenLightbox(hero.heroImageUrl, 'VIERBACH AT6 Mobiele Torenkraan op de bouwlocatie')}
+                  className="absolute top-4 right-4 bg-slate-900/80 hover:bg-slate-900 text-white p-2.5 rounded-lg backdrop-blur border border-slate-700 transition-colors"
+                  title="Bekijk foto op volledig scherm"
+                  id="hero-image-zoom-button"
+                >
+                  <Maximize2 className="w-4 h-4" />
+                </button>
+              </div>
 
-              {/* Photo Zoom Button */}
-              <button
-                onClick={() => onOpenLightbox(hero.heroImageUrl, 'VIERBACH AT6 Mobiele Torenkraan op de bouwlocatie')}
-                className="absolute top-4 right-4 bg-slate-900/80 hover:bg-slate-900 text-white p-2.5 rounded-lg backdrop-blur border border-slate-700 transition-colors"
-                title="Bekijk foto op volledig scherm"
-                id="hero-image-zoom-button"
-              >
-                <Maximize2 className="w-4 h-4" />
-              </button>
-
-              {/* Image Caption overlay */}
-              <div className="absolute bottom-4 left-4 right-4 bg-slate-900/90 backdrop-blur border border-slate-800 p-4 rounded-xl flex items-center justify-between gap-3">
+              {/* Image Caption bar — below the photo so the crane stays unobstructed */}
+              <div className="flex items-center justify-between gap-3 bg-slate-900/95 border-t border-slate-800 px-4 py-3.5">
                 <div>
                   <p className="text-xs uppercase tracking-wider text-amber-400 font-bold">Vlaggenschip Kraan</p>
                   <p className="text-sm font-semibold text-white">AT6 Spierings Mobiele Torenkraan</p>
