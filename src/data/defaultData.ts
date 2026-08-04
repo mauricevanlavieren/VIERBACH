@@ -11,7 +11,7 @@ export const INITIAL_WEBSITE_DATA: WebsiteData = {
     phone: '31641775668',
     phoneDisplay: '+31 6 41775668',
     whatsapp: '31612345678',
-    email: 'info@vierbach-hijskranen.nl',
+    email: 'info@vierbach.nl',
     kvk: '87654321',
     btw: 'NL001234567B01',
     address: 'Regio Midden-Nederland (Standplaats Gelderland / Utrecht)',
