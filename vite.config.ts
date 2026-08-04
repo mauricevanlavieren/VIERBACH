@@ -5,6 +5,9 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
+    // Relative base: works at the default project URL (/VIERBACH/) and at the
+    // custom domain (https://vierbach.nl/) once DNS is set up.
+    base: './',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
