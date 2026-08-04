@@ -1,0 +1,6 @@
+{
+  "name": "VIERBACH Hijskraanverhuur",
+  "description": "Snelle statische landing page voor VIERBACH mobiele hijskraan AT6 verhuur met machinist, inclusief beheerbaar CMS, 3 meest recente projecten en algemene voorwaarden.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
