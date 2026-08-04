@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, MessageSquare, Mail, MapPin, Building, ShieldCheck, Clock } from 'lucide-react';
+import { Phone, FileText, Mail, MapPin, Building, ShieldCheck, Clock } from 'lucide-react';
 import { CompanyInfo } from '../types';
 import { Logo } from './Logo';
 
@@ -40,16 +40,17 @@ export const ContactFooter: React.FC<ContactFooterProps> = ({ company }) => {
                   <span>Bel Nu: {company.phoneDisplay}</span>
                 </a>
 
-                <a
-                  href={`https://wa.me/${company.whatsapp}?text=Hallo%20VIERBACH,%20ik%20wil%20graag%20de%20AT6%20kraan%20huren.`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-4 rounded-xl text-base transition-all border border-emerald-500"
-                  id="footer-whatsapp-button"
+                <button
+                  onClick={() =>
+                    document.getElementById('algemene-voorwaarden')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                  }
+                  className="flex items-center justify-center gap-2.5 bg-slate-800 hover:bg-slate-700 text-amber-400 border border-slate-700 font-bold px-6 py-4 rounded-xl text-base transition-all active:scale-98"
+                  id="footer-terms-button"
+                  title="Bekijk de algemene voorwaarden"
                 >
-                  <MessageSquare className="w-5 h-5" />
-                  <span>Stuur WhatsApp</span>
-                </a>
+                  <FileText className="w-5 h-5" />
+                  <span>Algemene Voorwaarden</span>
+                </button>
               </div>
             </div>
 

@@ -8,8 +8,8 @@ export const INITIAL_WEBSITE_DATA: WebsiteData = {
   company: {
     name: 'VIERBACH',
     tagline: 'Hijskraanverhuur met Machinist | AT6 Mobiele Torenkraan',
-    phone: '31612345678',
-    phoneDisplay: '06 - 12 34 56 78',
+    phone: '31641775668',
+    phoneDisplay: '+31 6 41775668',
     whatsapp: '31612345678',
     email: 'info@vierbach-hijskranen.nl',
     kvk: '87654321',

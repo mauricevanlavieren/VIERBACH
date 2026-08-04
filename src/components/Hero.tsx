@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, MessageSquare, Maximize2, ShieldCheck, Zap, Clock, ArrowRight, CheckCircle } from 'lucide-react';
+import { Phone, FileText, Maximize2, ShieldCheck, Zap, Clock, ArrowRight, CheckCircle } from 'lucide-react';
 import { HeroData, CompanyInfo } from '../types';
 
 interface HeroProps {
@@ -69,16 +69,17 @@ export const Hero: React.FC<HeroProps> = ({ hero, company, onOpenLightbox }) => 
                 <span>Direct Bellen: {company.phoneDisplay}</span>
               </a>
 
-              <a
-                href={`https://wa.me/${company.whatsapp}?text=Beste%20VIERBACH,%20ik%20wil%20graag%20de%20beschikbaarheid%20en%20tarieven%20vragen%20voor%20de%20AT6%20mobiele%20hijskraan.`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-5 py-3.5 rounded-xl text-base transition-all border border-emerald-500"
-                id="hero-whatsapp-button"
+              <button
+                onClick={() =>
+                  document.getElementById('algemene-voorwaarden')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                }
+                className="flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 text-amber-400 border border-slate-700 font-bold px-5 py-3.5 rounded-xl text-base transition-all active:scale-98"
+                id="hero-terms-button"
+                title="Bekijk de algemene voorwaarden"
               >
-                <MessageSquare className="w-5 h-5" />
-                <span>WhatsApp Bericht</span>
-              </a>
+                <FileText className="w-5 h-5" />
+                <span>Algemene Voorwaarden</span>
+              </button>
             </div>
           </div>
 

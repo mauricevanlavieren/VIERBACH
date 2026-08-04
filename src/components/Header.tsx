@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, MessageSquare, Settings, CheckCircle2 } from 'lucide-react';
+import { Phone, FileText, Settings, CheckCircle2 } from 'lucide-react';
 import { CompanyInfo } from '../types';
 import { Logo } from './Logo';
 
@@ -63,16 +63,17 @@ export const Header: React.FC<HeaderProps> = ({ company, onOpenCms, isCmsActive 
             <span>{company.phoneDisplay}</span>
           </a>
 
-          <a
-            href={`https://wa.me/${company.whatsapp}?text=Hallo%20VIERBACH,%20ik%20heb%20interesse%20in%20het%20huren%20van%20de%20AT6%20mobiele%20hijskraan.`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden md:flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-medium px-3.5 py-2 rounded-lg text-sm transition-all shadow-sm"
-            id="header-whatsapp-button"
+          <button
+            onClick={() =>
+              document.getElementById('algemene-voorwaarden')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            }
+            className="hidden md:flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-amber-400 border border-slate-700 font-semibold px-3.5 py-2 rounded-lg text-sm transition-all shadow-sm active:scale-95"
+            id="header-terms-button"
+            title="Bekijk de algemene voorwaarden"
           >
-            <MessageSquare className="w-4 h-4" />
-            <span>WhatsApp</span>
-          </a>
+            <FileText className="w-4 h-4" />
+            <span>Algemene Voorwaarden</span>
+          </button>
         </div>
       </div>
     </header>
