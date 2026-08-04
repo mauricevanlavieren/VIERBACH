@@ -42,19 +42,11 @@ export const Hero: React.FC<HeroProps> = ({ hero, company, onOpenLightbox }) => 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-sm text-slate-200">
               <div className="flex items-center gap-2">
                 <CheckCircle className="w-4 h-4 text-amber-400 shrink-0" />
-                <span>Geen voorrijdkosten binnen regio</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-amber-400 shrink-0" />
                 <span>Compacte opstelruimte benodigd</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle className="w-4 h-4 text-amber-400 shrink-0" />
                 <span>Eigen gecertificeerde machinist</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-4 h-4 text-amber-400 shrink-0" />
-                <span>Radiografische afstandsbediening</span>
               </div>
             </div>
 

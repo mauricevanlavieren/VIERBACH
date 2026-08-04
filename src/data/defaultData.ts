@@ -1,5 +1,5 @@
 import { WebsiteData } from '../types';
-import heroImg from '../assets/images/vierbach_at6_crane_1785838631009.jpg';
+import heroImg from '../assets/images/vierbach_at6_hero.jpg';
 import project1Img from '../assets/images/project_steel_assembly_1785838711385.jpg';
 import project2Img from '../assets/images/project_roof_truss_1785838735361.jpg';
 import project3Img from '../assets/images/project_hvac_placement_1785838750830.jpg';
@@ -25,10 +25,10 @@ export const INITIAL_WEBSITE_DATA: WebsiteData = {
     heroImageUrl: heroImg,
     badgeText: 'Eenmanszaak • Direct Contact • Snel Ter Plaatse',
     specs: [
-      { label: 'Max. Hijslast', value: '10.000 kg', subtext: 'Op korte afstand' },
-      { label: 'Max. Vlucht (Gieklengte)', value: '60,0 m', subtext: 'Met 1.700 kg op de punt' },
-      { label: 'Haakhoogte', value: '30,0 m - 48,2 m', subtext: 'Met getoptie 30°' },
-      { label: 'Opbouwtijd', value: '< 20 Minuten', subtext: 'Volledig hydraulisch & zelfstandig' },
+      { label: 'Max. Hijslast', value: '10.000 kg' },
+      { label: 'Max. Vlucht (Gieklengte)', value: '60,0 m' },
+      { label: 'Haakhoogte', value: '35,0 m' },
+      { label: 'Opbouwtijd', value: '< 20 Minuten' },
     ],
   },
   projects: [
