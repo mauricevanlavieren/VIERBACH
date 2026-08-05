@@ -20,6 +20,12 @@ export default defineConfig(() => {
       hmr: process.env.DISABLE_HMR !== 'true',
       // Disable file watching when DISABLE_HMR is true to save CPU during agent edits.
       watch: process.env.DISABLE_HMR === 'true' ? null : {},
+      // Stuur API- en uploads-verzoeken in dev door naar de lokale PHP-server:
+      //   php -S 127.0.0.1:8000 -t backend
+      proxy: {
+        '/api': 'http://127.0.0.1:8000',
+        '/uploads': 'http://127.0.0.1:8000',
+      },
     },
   };
 });

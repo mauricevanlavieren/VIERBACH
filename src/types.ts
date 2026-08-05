@@ -25,6 +25,8 @@ export interface TermSection {
 export interface CompanyInfo {
   name: string;
   tagline: string;
+  /** Optionele geüploade logo-afbeelding (\/uploads\/...). Leeg = tekstlogo. */
+  logoImageUrl?: string | null;
   phone: string;
   phoneDisplay: string;
   whatsapp: string;

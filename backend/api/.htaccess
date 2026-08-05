@@ -1,0 +1,15 @@
+# Bescherm serverconfiguratie tegen directe downloads
+<Files "config.php">
+  Require all denied
+</Files>
+<FilesMatch "\.(log|md)$">
+  Require all denied
+</FilesMatch>
+
+# Apache 2.2 fallback
+<IfModule !mod_authz_core.c>
+  <Files "config.php">
+    Order allow,deny
+    Deny from all
+  </Files>
+</IfModule>

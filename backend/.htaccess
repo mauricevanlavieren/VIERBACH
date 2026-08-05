@@ -1,0 +1,8 @@
+# Root .htaccess voor de STRATO htdocs-map.
+Options -Indexes
+
+# Laat /admin de React-app (index.html) laden
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^admin/?$ index.html [L]
+</IfModule>

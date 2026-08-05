@@ -5,11 +5,9 @@ import { Logo } from './Logo';
 
 interface HeaderProps {
   company: CompanyInfo;
-  onOpenCms: () => void;
-  isCmsActive: boolean;
 }
 
-export const Header: React.FC<HeaderProps> = ({ company, onOpenCms, isCmsActive }) => {
+export const Header: React.FC<HeaderProps> = ({ company }) => {
   return (
     <header className="sticky top-0 z-40 bg-slate-900 text-white shadow-md border-b border-slate-800" id="main-header">
       {/* Top Banner Notice */}
@@ -27,19 +25,15 @@ export const Header: React.FC<HeaderProps> = ({ company, onOpenCms, isCmsActive 
 
           <div className="flex items-center gap-4 text-xs">
             <span className="text-slate-400 hidden md:inline">Eénmanszaak met gecertificeerde machinist</span>
-            <button
-              onClick={onOpenCms}
-              className={`flex items-center gap-1.5 px-2.5 py-0.5 rounded text-[11px] font-semibold transition-colors ${
-                isCmsActive
-                  ? 'bg-amber-400 text-slate-950 font-bold'
-                  : 'bg-slate-800 hover:bg-slate-700 text-amber-400 border border-slate-700'
-              }`}
-              title="Content Management System (Beheer)"
-              id="cms-header-toggle"
+            <a
+              href="#/admin"
+              className="flex items-center gap-1.5 px-2.5 py-0.5 rounded text-[11px] font-semibold transition-colors bg-slate-800 hover:bg-slate-700 text-amber-400 border border-slate-700"
+              title="Inloggen voor het beheerpaneel"
+              id="admin-header-link"
             >
               <Settings className="w-3 h-3" />
-              <span>{isCmsActive ? 'CMS Modus Actief' : 'Eigenaar Beheer (CMS)'}</span>
-            </button>
+              <span>Beheer</span>
+            </a>
           </div>
         </div>
       </div>
@@ -48,7 +42,10 @@ export const Header: React.FC<HeaderProps> = ({ company, onOpenCms, isCmsActive 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-4">
         {/* Logo */}
         <a href="#top" className="flex items-center gap-2 group">
-          <Logo className="transition-transform group-hover:scale-[1.01]" />
+          <Logo
+            className="transition-transform group-hover:scale-[1.01]"
+            imageUrl={company.logoImageUrl}
+          />
         </a>
 
         {/* Quick Contact Buttons - Phone & WhatsApp (NO forms, direct contact) */}

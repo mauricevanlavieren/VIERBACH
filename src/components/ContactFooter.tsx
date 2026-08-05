@@ -108,7 +108,7 @@ export const ContactFooter: React.FC<ContactFooterProps> = ({ company }) => {
         {/* Bottom Credits & Static Disclaimer */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-slate-900 text-xs text-slate-500">
           <div className="flex items-center gap-3">
-            <Logo size="sm" />
+            <Logo size="sm" imageUrl={company.logoImageUrl} />
             <span>© {new Date().getFullYear()} VIERBACH Kraanverhuur. Alle rechten voorbehouden.</span>
           </div>
 

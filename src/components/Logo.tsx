@@ -3,9 +3,11 @@ import React from 'react';
 interface LogoProps {
   className?: string;
   size?: 'sm' | 'md' | 'lg';
+  /** Optionele geüploade logo-afbeelding; leeg/null toont het tekstlogo. */
+  imageUrl?: string | null;
 }
 
-export const Logo: React.FC<LogoProps> = ({ className = '', size = 'md' }) => {
+export const Logo: React.FC<LogoProps> = ({ className = '', size = 'md', imageUrl = null }) => {
   const iconSizes = {
     sm: 'w-7 h-7',
     md: 'w-9 h-9',
@@ -22,6 +24,12 @@ export const Logo: React.FC<LogoProps> = ({ className = '', size = 'md' }) => {
     sm: 'text-[9px]',
     md: 'text-[11px]',
     lg: 'text-[13px]',
+  };
+
+  const imgSizes = {
+    sm: 'h-6',
+    md: 'h-9',
+    lg: 'h-12',
   };
 
   return (
@@ -47,12 +55,22 @@ export const Logo: React.FC<LogoProps> = ({ className = '', size = 'md' }) => {
       </div>
 
       <div className="flex flex-col">
-        <span className={`font-extrabold uppercase tracking-wider text-amber-500 ${textSizes[size]} leading-none`}>
-          VIERBACH
-        </span>
-        <span className={`font-semibold tracking-wider text-slate-600 uppercase ${subtextSizes[size]} leading-tight`}>
-          Hijskraanverhuur
-        </span>
+        {imageUrl ? (
+          <img
+            src={imageUrl}
+            alt="VIERBACH logo"
+            className={`${imgSizes[size]} w-auto object-contain`}
+          />
+        ) : (
+          <>
+            <span className={`font-extrabold uppercase tracking-wider text-amber-500 ${textSizes[size]} leading-none`}>
+              VIERBACH
+            </span>
+            <span className={`font-semibold tracking-wider text-slate-600 uppercase ${subtextSizes[size]} leading-tight`}>
+              Hijskraanverhuur
+            </span>
+          </>
+        )}
       </div>
     </div>
   );

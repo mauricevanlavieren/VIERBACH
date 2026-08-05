@@ -6,13 +6,49 @@ import { Hero } from './components/Hero';
 import { RecentProjects } from './components/RecentProjects';
 import { TermsAndConditions } from './components/TermsAndConditions';
 import { ContactFooter } from './components/ContactFooter';
-import { CmsDrawer } from './components/CmsDrawer';
 import { LightboxModal } from './components/LightboxModal';
+import { Admin } from './components/Admin';
+import { fetchContent } from './api';
 
 const STORAGE_KEY = 'vierbach_website_cms_data_v1';
 
+/** Eenvoudige routering: /admin (pad of #/admin-hash) toont het beheerpaneel. */
+function isAdminRoute(): boolean {
+  const p = window.location.pathname.replace(/\/+$/, '');
+  return p.endsWith('/admin') || window.location.hash.toLowerCase().startsWith('#/admin');
+}
+
+/** Servercontent boven de standaardinhoud; ontbrekende stukken vallen terug. */
+function mergeWebsiteData(base: WebsiteData, server: WebsiteData): WebsiteData {
+  return {
+    company: { ...base.company, ...server.company },
+    hero: {
+      ...base.hero,
+      ...server.hero,
+      heroImageUrl: server.hero.heroImageUrl || base.hero.heroImageUrl,
+      specs: server.hero.specs && server.hero.specs.length > 0 ? server.hero.specs : base.hero.specs,
+    },
+    projects: server.projects && server.projects.length > 0 ? server.projects : base.projects,
+    terms: server.terms && server.terms.length > 0 ? server.terms : base.terms,
+  };
+}
+
 export default function App() {
+  const [isAdmin, setIsAdmin] = useState<boolean>(isAdminRoute);
+
+  // Reageer op navigatie tussen publieke site en beheerpaneel (#/admin of /admin)
+  useEffect(() => {
+    const sync = () => setIsAdmin(isAdminRoute());
+    window.addEventListener('hashchange', sync);
+    window.addEventListener('popstate', sync);
+    return () => {
+      window.removeEventListener('hashchange', sync);
+      window.removeEventListener('popstate', sync);
+    };
+  }, []);
+
   const [websiteData, setWebsiteData] = useState<WebsiteData>(() => {
+    // Legacy localStorage van het oude demo-CMS (wordt nog gerespecteerd als fallback).
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) {
@@ -22,12 +58,11 @@ export default function App() {
         }
       }
     } catch (e) {
-      console.warn('Failed to load saved CMS data, using default', e);
+      // ignore
     }
     return INITIAL_WEBSITE_DATA;
   });
 
-  const [isCmsOpen, setIsCmsOpen] = useState(false);
   const [lightboxState, setLightboxState] = useState<{
     isOpen: boolean;
     imageUrl: string;
@@ -38,24 +73,24 @@ export default function App() {
     title: '',
   });
 
-  // Save changes to localStorage whenever websiteData changes
-  const handleSaveData = (newData: WebsiteData) => {
-    setWebsiteData(newData);
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(newData));
-    } catch (e) {
-      console.error('Failed to save CMS data to localStorage', e);
-    }
-  };
+  // Publieke content laden vanaf de PHP-backend.
+  // Geen PHP beschikbaar (lokaal zonder server of GitHub Pages)? Dan blijft de site gewoon werken met de standaardinhoud.
+  useEffect(() => {
+    if (isAdmin) return;
+    let cancelled = false;
+    fetchContent().then((server) => {
+      if (cancelled || !server) return;
+      setWebsiteData((prev) => mergeWebsiteData(INITIAL_WEBSITE_DATA, server));
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [isAdmin]);
 
-  const handleResetData = () => {
-    setWebsiteData(INITIAL_WEBSITE_DATA);
-    try {
-      localStorage.removeItem(STORAGE_KEY);
-    } catch (e) {
-      console.error('Failed to clear CMS localStorage', e);
-    }
-  };
+  // Beheerpaneel
+  if (isAdmin) {
+    return <Admin />;
+  }
 
   const handleOpenLightbox = (imageUrl: string, title: string) => {
     setLightboxState({ isOpen: true, imageUrl, title });
@@ -68,11 +103,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-slate-950 font-sans text-slate-100 selection:bg-amber-400 selection:text-slate-950">
       {/* Sticky Navigation Header */}
-      <Header
-        company={websiteData.company}
-        onOpenCms={() => setIsCmsOpen(true)}
-        isCmsActive={isCmsOpen}
-      />
+      <Header company={websiteData.company} />
 
       {/* Main Single Page Content */}
       <main>
@@ -98,15 +129,6 @@ export default function App() {
 
       {/* 4. Direct Contact Footer (Phone numbers only, no forms) */}
       <ContactFooter company={websiteData.company} />
-
-      {/* Interactive CMS Slide-Over Editor for the Website Owner */}
-      <CmsDrawer
-        isOpen={isCmsOpen}
-        onClose={() => setIsCmsOpen(false)}
-        data={websiteData}
-        onSaveData={handleSaveData}
-        onResetData={handleResetData}
-      />
 
       {/* Fullscreen Photo Lightbox Modal */}
       <LightboxModal

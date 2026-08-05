@@ -1,0 +1,9 @@
+# Hulpmiddelen zijn nooit via de browser bereikbaar (alleen CLI).
+Require all denied
+Options -Indexes
+
+# Apache 2.2 fallback
+<IfModule !mod_authz_core.c>
+  Order allow,deny
+  Deny from all
+</IfModule>

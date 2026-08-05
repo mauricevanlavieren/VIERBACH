@@ -1,0 +1,10 @@
+# De data-map is nooit direct via de browser bereikbaar.
+# PHP leest content.json via de bestandsfuncties (server-side) — dat blijft gewoon werken.
+Require all denied
+Options -Indexes
+
+# Apache 2.2 fallback
+<IfModule !mod_authz_core.c>
+  Order allow,deny
+  Deny from all
+</IfModule>
