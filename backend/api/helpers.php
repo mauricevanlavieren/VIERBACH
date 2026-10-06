@@ -28,7 +28,8 @@ function vb_start_session(): void
     if (session_status() === PHP_SESSION_ACTIVE) {
         return;
     }
-    $isHttps = !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off';
+    $isHttps = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+        || getenv('RAILWAY_ENVIRONMENT') !== false;
     session_set_cookie_params([
         'lifetime' => 0,                 // tot de browser sluit
         'path'     => '/',
