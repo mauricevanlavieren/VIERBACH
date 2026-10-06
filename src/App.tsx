@@ -10,7 +10,6 @@ import { LightboxModal } from './components/LightboxModal';
 import { Admin } from './components/Admin';
 import { fetchContent } from './api';
 
-const STORAGE_KEY = 'vierbach_website_cms_data_v1';
 
 /** Eenvoudige routering: /admin (pad of #/admin-hash) toont het beheerpaneel. */
 function isAdminRoute(): boolean {
@@ -48,18 +47,6 @@ export default function App() {
   }, []);
 
   const [websiteData, setWebsiteData] = useState<WebsiteData>(() => {
-    // Legacy localStorage van het oude demo-CMS (wordt nog gerespecteerd als fallback).
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        if (parsed.company && parsed.hero && parsed.projects) {
-          return parsed;
-        }
-      }
-    } catch (e) {
-      // ignore
-    }
     return INITIAL_WEBSITE_DATA;
   });
 
@@ -140,3 +127,4 @@ export default function App() {
     </div>
   );
 }
+

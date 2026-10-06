@@ -16,6 +16,8 @@ COPY backend/ /var/www/html/
 COPY docker/apache.conf /etc/apache2/conf-enabled/vierbach.conf
 COPY docker/php.ini /usr/local/etc/php/conf.d/vierbach.ini
 COPY docker/entrypoint.sh /usr/local/bin/vierbach-start
+COPY docker/migrate-content.php /usr/local/bin/vierbach-migrate-content.php
+RUN php -l /usr/local/bin/vierbach-migrate-content.php
 RUN find /var/www/html/api -name '*.php' -exec php -l {} \; \
  && mkdir -p /opt/vierbach-seed \
  && cp -a /var/www/html/data /var/www/html/uploads /opt/vierbach-seed/ \

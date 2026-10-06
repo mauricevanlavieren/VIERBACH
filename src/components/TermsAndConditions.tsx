@@ -56,11 +56,11 @@ export const TermsAndConditions: React.FC<TermsProps> = ({ terms, company }) => 
                 Algemene Voorwaarden
               </h2>
               <p className="text-slate-400 text-sm">
-                VIERBACH Hijskraanverhuur • Mobiele Torenkraan AT6 met Machinist
+                {company.name} • {company.address}
               </p>
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 print:hidden">
               <button
                 onClick={handlePrint}
                 className="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-semibold px-4 py-2.5 rounded-xl text-xs transition-colors shadow-sm"
@@ -77,13 +77,13 @@ export const TermsAndConditions: React.FC<TermsProps> = ({ terms, company }) => 
           <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 flex items-start gap-3 text-xs text-slate-300">
             <ShieldAlert className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
             <div>
-              <span className="font-bold text-white block mb-0.5">Veiligheid & Kwaliteit Voorop</span>
-              Op alle kraanverhuurovereenkomsten van VIERBACH zijn naast deze algemene voorwaarden voor kraanverhuur met machinist de landelijke VVT-veiligheidsrichtlijnen van kracht.
+              <span className="font-bold text-white block mb-0.5">Algemene voorwaarden van VIERBACH</span>
+              Hieronder vindt u de algemene voorwaarden voor overeenkomsten tussen VIERBACH en opdrachtgever.
             </div>
           </div>
 
           {/* Controls: Search & Expand/Collapse */}
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2 border-t border-slate-800/80">
+          <div className="print:hidden flex flex-col sm:flex-row items-center justify-between gap-4 pt-2 border-t border-slate-800/80">
             <div className="relative w-full sm:w-72">
               <Search className="w-4 h-4 text-slate-500 absolute left-3 top-3" />
               <input
@@ -109,17 +109,17 @@ export const TermsAndConditions: React.FC<TermsProps> = ({ terms, company }) => 
 
         {/* Terms Accordion List */}
         <div className="space-y-4">
-          {filteredTerms.length === 0 ? (
-            <div className="bg-slate-950 p-8 text-center rounded-2xl border border-slate-800 text-slate-400">
+          {filteredTerms.length === 0 && (
+            <div className="print:hidden bg-slate-950 p-8 text-center rounded-2xl border border-slate-800 text-slate-400">
               Geen artikelen gevonden voor &quot;{searchTerm}&quot;.
             </div>
-          ) : (
-            filteredTerms.map((section) => {
+          )}
+          {terms.map((section) => {
               const isOpen = !!openSections[section.id];
               return (
                 <div
                   key={section.id}
-                  className="bg-slate-950 rounded-xl border border-slate-800 overflow-hidden transition-colors"
+                  className={`bg-slate-950 rounded-xl border border-slate-800 overflow-hidden transition-colors print:block ${filteredTerms.includes(section) ? "" : "hidden"}`}
                   id={`term-section-${section.id}`}
                 >
                   <button
@@ -141,8 +141,8 @@ export const TermsAndConditions: React.FC<TermsProps> = ({ terms, company }) => 
                     )}
                   </button>
 
-                  {isOpen && (
-                    <div className="px-5 pb-6 pt-2 border-t border-slate-800/80 space-y-3 text-sm text-slate-300 leading-relaxed bg-slate-950/60">
+                  {(
+                    <div className={`${isOpen ? "" : "hidden"} print:block px-5 pb-6 pt-2 border-t border-slate-800/80 space-y-3 text-sm text-slate-300 leading-relaxed bg-slate-950/60`}>
                       {section.content.map((paragraph, pIdx) => (
                         <p key={pIdx} className="flex items-start gap-2.5">
                           <CheckCircle2 className="w-4 h-4 text-amber-400/80 shrink-0 mt-0.5" />
@@ -154,14 +154,15 @@ export const TermsAndConditions: React.FC<TermsProps> = ({ terms, company }) => 
                 </div>
               );
             })
-          )}
+          }
         </div>
 
         {/* Footer Note */}
         <div className="mt-8 text-center text-xs text-slate-500">
-          Gedeponeerd bij VIERBACH Hijskraanverhuur • KVK: {company.kvk} • BTW: {company.btw}
+          {company.name} • {company.address} • KVK: {company.kvk}{company.btw && ` • BTW: ${company.btw}`}
         </div>
       </div>
     </section>
   );
 };
+

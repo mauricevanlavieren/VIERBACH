@@ -98,7 +98,7 @@ export const ContactFooter: React.FC<ContactFooterProps> = ({ company }) => {
                 <div className="flex items-center gap-3 pt-2 border-t border-slate-900 text-xs text-slate-400">
                   <Building className="w-4 h-4 text-slate-500" />
                   <span>KVK: <strong className="text-slate-200">{company.kvk}</strong></span>
-                  <span className="ml-auto">BTW: <strong className="text-slate-200">{company.btw}</strong></span>
+                  {company.btw && <span className="ml-auto">BTW: <strong className="text-slate-200">{company.btw}</strong></span>}
                 </div>
               </div>
             </div>
@@ -113,10 +113,10 @@ export const ContactFooter: React.FC<ContactFooterProps> = ({ company }) => {
           </div>
 
           <div className="flex items-center gap-4 text-slate-400">
-            <span className="flex items-center gap-1 text-emerald-400 font-medium">
+            <a href="https://www.kzkm.nl/" className="flex items-center gap-1 text-emerald-400 font-medium">
               <ShieldCheck className="w-3.5 h-3.5" />
-              100% Statisch & Bliksemsnel
-            </span>
+              Lid van Kzkm.nl
+            </a>
             <span>•</span>
             <a href="#algemene-voorwaarden" className="hover:text-amber-400 transition-colors">
               Voorwaarden
@@ -127,3 +127,4 @@ export const ContactFooter: React.FC<ContactFooterProps> = ({ company }) => {
     </footer>
   );
 };
+

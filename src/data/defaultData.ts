@@ -10,11 +10,11 @@ export const INITIAL_WEBSITE_DATA: WebsiteData = {
     tagline: 'Hijskraanverhuur met Machinist | AT6 Mobiele Torenkraan',
     phone: '31641775668',
     phoneDisplay: '+31 6 41775668',
-    whatsapp: '31612345678',
-    email: 'info@vierbach.nl',
-    kvk: '87654321',
-    btw: 'NL001234567B01',
-    address: 'Regio Midden-Nederland (Standplaats Gelderland / Utrecht)',
+    whatsapp: '31641775668',
+    email: "info@vierbach.nl",
+    kvk: "75490366",
+    btw: "",
+    address: "Lijsterbes 8, 3224 RD Hellevoetsluis",
     workingRadius: 'Inzetbaar in heel Nederland & Benelux',
     statusBadge: 'Direct Beschikbaar voor Projecten',
   },
@@ -64,55 +64,210 @@ export const INITIAL_WEBSITE_DATA: WebsiteData = {
     },
   ],
   terms: [
-    {
-      id: 'term-1',
-      number: '01',
-      title: 'Toepasselijkheid & Algemene Bepalingen',
-      content: [
-        'Deze Algemene Voorwaarden zijn van toepassing op alle aanbiedingen, offertes, overeenkomsten en werkzaamheden van VIERBACH Kraanverhuur, voor het verhuren van de mobiele hijskraan AT6 inclusief gecertificeerde machinist.',
-        'Afwijkingen van deze voorwaarden zijn slechts geldig indien deze uitdrukkelijk en schriftelijk (of via e-mail/WhatsApp) zijn overeengekomen.',
-        'De Algemene Algemene Voorwaarden voor de Verhuur van Mobiele Kranen (VVT-voorwaarden) zijn voor zover toepasselijk mede van kracht.',
-      ],
-    },
-    {
-      id: 'term-2',
-      number: '02',
-      title: 'Uitvoering & Inzet Machinist',
-      content: [
-        'De mobiele hijskraan wordt uitsluitend verhuurd mét machinist. De machinist is gediplomeerd, gecertificeerd en bevoegd om de AT6 kraan te bedienen.',
-        'De machinist beoordeelt ter plaatse de veiligheid van de hijsoperatie. De machinist heeft te allen tijde het recht om hijswerkzaamheden stil te leggen indien de veiligheid (door weer, wind, ondergrond of ondeugdelijk hijsgereedschap van derden) in het geding komt.',
-        'De opdrachtgever zorgt voor een duidelijke instructie en een daartoe bevoegde aanslagman indien vereist op de bouwlocatie.',
-      ],
-    },
-    {
-      id: 'term-3',
-      number: '03',
-      title: 'Opstellingsplaats & Toegankelijkheid',
-      content: [
-        'De opdrachtgever draagt er zorg voor dat de opstellingsplaats en de toegangswegen geschikt, vrij van obstakels en voldoende draagkrachtig zijn voor de mobiele kraan AT6.',
-        'Schade aan terreinen, bestrating, kabels of leidingen als gevolg van een onvoldoende draagkrachtige of onjuist aangewezen ondergrond valt onder de verantwoordelijkheid van de opdrachtgever.',
-        'Eventuele benodigde vergunningen, verkeersmaatregelen of TVM (tijdelijke verkeersmaatregelen) dienen vooraf door de opdrachtgever te zijn geregeld, tenzij anders overeengekomen.',
-      ],
-    },
-    {
-      id: 'term-4',
-      number: '04',
-      title: 'Tarieven, Btw & Annulering',
-      content: [
-        'Tarieven worden berekend op basis van het overeengekomen uurtarief of dagtarief, inclusief machinist en brandstof, exclusief BTW, eventuele vergunningskosten en tolgelden.',
-        'De berekening van de werktijd vangt aan bij vertrek vanaf de standplaats en eindigt bij terugkomst op de standplaats, inclusief op- en afbouwtijd.',
-        'Annulering tot 24 uur voor aanvang is kosteloos. Bij annulering binnen 24 uur voor aanvang van de werkzaamheden kan een minimum van 4 uur plus aanrijdkosten in rekening worden gebracht.',
-      ],
-    },
-    {
-      id: 'term-5',
-      number: '05',
-      title: 'Aansprakelijkheid & Verzekering',
-      content: [
-        'VIERBACH beschikt over een uitstekende Bedrijfsaansprakelijkheidsverzekering (AVB) en specifieke Kraanverhuurverzekering.',
-        'Aansprakelijkheid voor indirecte schade, gevolgschade of vertragingsschade is uitgesloten, behoudens opzet of grove schuld van VIERBACH.',
-        'De te hijsen lasten dienen door de opdrachtgever adequaat te zijn ingepakt/bevestigd en voorzien van de juiste hijspunten.',
-      ],
-    },
-  ],
+  {
+    "id": "term-1",
+    "number": "01",
+    "title": "Definities",
+    "content": [
+      "1.1. In deze algemene voorwaarden worden de hierna volgende termen in de navolgende betekenis gebruikt, tenzij uitdrukkelijk anders is aangegeven of uit de context anders blijkt:",
+      "a. Aannemer: VIERBACH, gevestigd aan de Lijsterbes 8, 3224 RD, Hellevoetsluis;",
+      "b. Opdrachtgever: de wederpartij van aannemer. Onderaannemer van de uit te voeren opdrachten, eigenaar van de hijskraan, vrachtwagen of andere machine(s), die met aannemer een overeenkomst aangaan om werk uit te voeren of tot het bedienen/ besturen van de hijskraan, vrachtwagen of andere machines;",
+      "c. Overeenkomst: de overeenkomst tussen aannemer en opdrachtgever om de klus uit te voeren;",
+      "d. Huurder: de huurder van opdrachtgever die de hijskraan, vrachtwagen en/of andere machines van de opdrachtgever huurt. En ten behoeve van wie aannemer in opdracht van opdrachtgever werkzaamheden verricht of de hijskraan, vrachtwagen of andere machines bedient/bestuurd;",
+      "e. Onderaannemer: de natuurlijke persoon die namens aannemer de overeenkomst uitvoert;",
+      "f. Schriftelijk: in geschrift of via een elektronisch communicatiemedium;",
+      "g. Elektronisch communicatiemedium: e-mail, WhatsApp, SMS;",
+      "h. Machine(s): de hijskraan, vrachtwagen of andere machines van opdrachtgever die door aannemer of onderaannemer in opdracht van opdrachtgever wordt/worden bediend of bestuurd."
+    ]
+  },
+  {
+    "id": "term-2",
+    "number": "02",
+    "title": "Algemeen",
+    "content": [
+      "2.1. Deze algemene voorwaarden zijn van toepassing op iedere overeenkomst tussen aannemer en opdrachtgever.",
+      "2.2. Afwijkingen op deze algemene voorwaarden zijn uitsluitend geldig indien deze uitdrukkelijk schriftelijk zijn overeengekomen.",
+      "2.3. Aannemer wijst de toepasselijkheid van door de opdrachtgever gehanteerde algemene (inkoop)voorwaarden uitdrukkelijk van de hand.",
+      "2.4. Indien een of meerdere van de bepalingen in deze algemene voorwaarden nietig zijn of vernietigd mochten worden, blijven de overige bepalingen van deze algemene voorwaarden volledig van toepassing. De nietige of vernietigde bepalingen zullen door aannemer vervangen worden, waarbij voor zoveel mogelijk het doel en de strekking van de oorspronkelijke bepaling(en) in acht wordt genomen.",
+      "2.5. Indien aannemer niet steeds strikte naleving van deze algemene voorwaarden verlangt, betekent dit niet dat de bepalingen daarvan niet van toepassing zijn, of dat aannemer in enigerlei mate het recht zou verliezen om in andere gevallen de stipte naleving van de bepalingen van deze algemene voorwaarden te verlangen.",
+      "2.6. Indien ten aanzien van bepaalde, bij deze voorwaarden geregelde onderwerpen, afwijkingen zijn overeengekomen, blijven de onderhavige Algemene Voorwaarden voor het overige op die overeenkomst van kracht. Overeengekomen afwijkingen gelden nimmer voor meer dan eìeì n opdracht, tenzij wederom schriftelijk bevestigd."
+    ]
+  },
+  {
+    "id": "term-3",
+    "number": "03",
+    "title": "Offertes en tarieven",
+    "content": [
+      "3.1. Alle aanbiedingen en offertes zijn geheel vrijblijvend.",
+      "3.2. Indien offerte voorzien is van een geldigheidstermijn is deze terug te vinden op aangeboden offerte.",
+      "3.3. De op de offerte vermelde tarieven en prijzen zijn in EURO per uur en is exclusief BTW of BTW verlegd (prijzen zijn het normaaltarief en tarieven voor overwerk, zaterdagwerk en werk op feestdagen).",
+      "3.4. Aannemer is gerechtigd het uurtarief te wijzigen indien de kosten stijgen door wijzigingen in wet- en regelgeving of door overige overheidsmaatregelen. Aannemer zal opdrachtgever het voornemen tot wijziging van het tarief schriftelijk kenbaar maken. Daarbij zal aannemer de omvang en de ingangsdatum van de wijziging vermelden.",
+      "3.5. De opdrachtgever staat in voor de juistheid en volledigheid van de door of namens hem aan aannemer opgegeven eisen, specificaties en andere gegevens waarop aannemer zijn aanbieding baseert.",
+      "3.6. Kennelijke fouten of vergissingen in offertes, overeenkomsten, e-mail- of WhatsAppberichten van aannemer binden aannemer niet.",
+      "3.7. Offertes en tarieven gelden niet automatisch voor toekomstige opdrachten.",
+      "3.8. Aannemer kan naast deze Algemene Voorwaarden tevens gebruik maken van Voorwaarden voor opdracht.",
+      "3.9. Voorwaarden voor opdracht worden vermeld in de offerte die aannemer opdrachtgever vrijblijvend aanbiedt.",
+      "3.10. De Voorwaarden voor opdracht zijn geldig als opdrachtnemer en opdrachtgever de offerte ondertekend hebben."
+    ]
+  },
+  {
+    "id": "term-4",
+    "number": "04",
+    "title": "Totstandkoming van de overeenkomst",
+    "content": [
+      "4.1. De overeenkomst komt uitsluitend tot stand nadat:",
+      "a Beide partijen (aannemer en opdrachtgever) de overeenkomst schriftelijk hebben ondertekend;",
+      "b Of opdrachtgever de offerte van aannemer schriftelijk heeft ondertekend en gecommuniceerd;",
+      "c Of opdrachtgever schriftelijk akkoord is gegaan met het aanbod van aannemer."
+    ]
+  },
+  {
+    "id": "term-5",
+    "number": "05",
+    "title": "Uitvoering van de overeenkomst",
+    "content": [
+      "5.1. Aannemer zal bij het uitvoeren van de opdracht en/of het bedienen/besturen van de machine, de grootst mogelijke zorgvuldigheid aangaande de belangen van de opdrachtgever in acht nemen.",
+      "5.2. Aannemer heeft het recht bij de uitvoering van de overeenkomst derden in te schakelen en/of om de overeenkomst geheel of gedeeltelijk door derden te laten uitvoeren.",
+      "5.3. Indien de onderaannemer wegens ziekte of een andere omstandigheid geen werkzaamheden voor de huurder kan uitvoeren, dan wordt de huurder en de opdrachtgever daarvan zo spoedig mogelijk telefonisch in kennis gesteld. In een dergelijk geval zullen partijen met elkaar in overleg treden om tot een oplossing te komen.",
+      "5.4. Opdrachtgever is ten alle tijden zelf verantwoordelijk voor invulling opdracht, tenzij uitdrukkelijk anders is overeengekomen en schriftelijk is bevestigd door aannemer.",
+      "5.5. Een vermelde termijn van uitvoering kan nimmer als een fatale termijn worden beschouwd.",
+      "5.6. Aannemer verklaart de werkzaamheden uit te voeren als zelfstandig ondernemer."
+    ]
+  },
+  {
+    "id": "term-6",
+    "number": "06",
+    "title": "Verplichtingen van de opdrachtgever",
+    "content": [
+      "6.1. De opdrachtgever draagt er zorg voor dat alle gegevens en materialen, waarvan aannemer aangeeft dat deze noodzakelijk zijn of waarvan de opdrachtgever redelijkerwijs behoort te begrijpen dat deze noodzakelijk zijn voor het uitvoeren van de overeenkomst, tijdig aan aannemer ter beschikking worden gesteld.",
+      "6.2. Indien de door de opdrachtgever aangeleverde gegevens onvolledig en/of onjuist zijn, komt dit volledig voor rekening en risico van de opdrachtgever. De opdrachtgever is verantwoordelijk voor de door of namens hem verstrekte materialen.",
+      "6.3. De opdrachtgever dient aannemer of aannemer(s) degelijke instructies te geven waaruit duidelijk blijkt welke werkzaamheden er verricht dienen te worden.",
+      "6.4. De opdrachtgever is gehouden aannemer onverwijld te informeren omtrent feiten en omstandigheden die in verband met de uitvoering van de overeenkomst van belang kunnen zijn. Tevens dient de opdrachtgever aannemer te informeren over situaties die mogelijk een gevaar kunnen opleveren voor aannemer.",
+      "6.5. De opdrachtgever vrijwaart aannemer voor alle aanspraken van derden uit hoofde van door deze derden geleden schade voortvloeiende uit (de uitvoering van) de overeenkomst.",
+      "6.6. De opdrachtgever is verantwoordelijk voor de werking en veiligheid van de te bedienen machine. De opdrachtgever dient er te allen tijde voor zorg te dragen dat machine voldoet aan alle wettelijke eisen. Hijsmiddelen en certificaten dienen aanwezig te zijn en niet over datum te zijn. Indien de machine een mankement heeft, dan dient de opdrachtgever dat vooraf aan aannemer te melden.",
+      "6.7. De dient ervoor zorg te dragen dat de machine goed onderhouden wordt, de dagelijkse controle wordt door aannemer uitgevoerd.",
+      "6.8. De machine dient afgetankt te zijn en, indien van toepassing, geladen met gereedschappen die nodig zijn om het uit te kunnen voeren.",
+      "6.9. De opdrachtgever dient ervoor zorg te dragen dat de locatie(s) waar, de hulpmiddelen waarmee en de omstandigheden waarin aannemer de werkzaamheden uit dient te voeren veilig zijn en voldoen aan alle wettelijke voorschriften. De opdrachtgever dient zodanige maatregelen te treffen dat aannemer of onderaannemer tijdens de uitvoering van de werkzaamheden beschermd is tegen gevaar voor lijf, eerbaarheid en goed.",
+      "6.10. Aannemer gaat ervan uit dat de opdrachtgever al zijn wettelijke verplichtingen nakomt.",
+      "6.11. De opdrachtgever dient zich te onthouden van gedragingen welke het aannemer of de onderaannemer onmogelijk maakt de werkzaamheden naar behoren uit te voeren. De opdrachtgever dient aannemer of de onderaannemer de gelegenheid te geven de werkzaamheden uit te voeren onder omstandigheden die voldoen aan de wettelijke (veiligheids)eisen.",
+      "6.12. De opdrachtgever staat er voor in dat de rust- en werktijden van de onderaannemer voldoen aan de wettelijke vereisten.",
+      "6.13. De opdrachtgever dient ervoor zorg te dragen dat de uit te voeren opdracht of hijskraan/vrachtwagen/machine en de risico’s die verbonden zijn aan het uitvoeren van de overeenkomst zoals, maar zeker niet beperkt tot, arbeidsongeschiktheid en letselschade, verzekerd zijn.",
+      "6.14. De verplichtingen jegens aannemer die zijn opgenomen in dit artikel gelden, voor zover van toepassing, tevens voor de aannemer of huurder. De opdrachtgever dient ervoor zorg te dragen dat de aannemer of huurder deze verplichtingen nakomt.",
+      "6.15. Indien de opdrachtgever niet, niet tijdig of niet volledig aan zijn verplichtingen jegens aannemer heeft voldaan, dan heeft aannemer het recht de kosten en/of schades die daaruit voortvloeien aan de opdrachtgever in rekening te brengen en heeft aannemer het recht zijn werkzaamheden op te schorten.",
+      "6.16 De opdrachtgever dient een afdoende AVB-verzekering af te sluiten.",
+      "6.17 De opdrachtgever vrijwaart aannemer tegen eventuele vorderingen van onderaannemer(s)."
+    ]
+  },
+  {
+    "id": "term-7",
+    "number": "07",
+    "title": "Wijzigen van de overeenkomst en meerkosten.",
+    "content": [
+      "7.1. De financiële consequenties van het wijzigen van de overeenkomst, worden, indien mogelijk, vooraf aan de opdrachtgever kenbaar gemaakt.",
+      "7.2. Wachttijden en oponthoud veroorzaakt door onvoorziene omstandigheden dan wel door het niet voldoen van de opdrachtgever of de huurder aan zijn verplichtingen, indien deze leiden tot meerkosten, worden aan de opdrachtgever in rekening gebracht."
+    ]
+  },
+  {
+    "id": "term-8",
+    "number": "08",
+    "title": "Facturatie, betaling en retentierecht",
+    "content": [
+      "8.1. Facturatie geschiedt wekelijks achteraf.",
+      "8.2. De opdrachtgever dient de van aannemer ontvangen facturen te betalen binnen de afgesproken termijn na de factuurdatum.",
+      "8.3. Indien de opdrachtgever geen gehoor heeft gegeven aan een door aannemer betalingsherinnering, dan heeft aannemer het recht de uitvoering van de werkzaamheden op te schorten totdat alle verschuldigde bedragen betaald zijn. Aannemer kan nimmer aansprakelijk worden gesteld voor de eventuele schade die de opdrachtgever door de opschorting lijdt.",
+      "8.4. Bij overschrijding van de betalingstermijn, is de opdrachtgever vanaf de datum waarop de verschuldigde som opeisbaar is geworden tot aan het tijdstip van betaling de wettelijke handelsrente, conform artikel 6:119a Burgerlijk Wetboek (BW), verschuldigd. Daarnaast komen alle kosten van invordering, nadat de opdrachtgever in verzuim is, zowel gerechtelijk als buitengerechtelijk, ten laste van de opdrachtgever. De buitengerechtelijke incassokosten worden vastgesteld op 15% van het bedrag van de hoofdsom van de vordering met een minimum van € 100,-.",
+      "8.5. In geval van liquidatie, faillissement, beslag of surseance van betaling van de opdrachtgever zijn de vorderingen van aannemer op de opdrachtgever onmiddellijk opeisbaar.",
+      "8.6. Iedere betaling door de opdrachtgever strekt allereerst tot voldoening van de verschuldigde rente(n) en vervolgens tot voldoening van de op de invordering vallende kosten. Pas na voldoening van deze bedragen strekt enige betaling door de opdrachtgever tot voldoening van de openstaande hoofdsom.",
+      "8.7 Aannemer is bevoegd de verplichting tot afgifte van zaken aan opdrachtgever op te schorten en/of onder zich te houden, tot al het aan aannemer toekomende uit hoofde van de overeenkomst is voldaan.",
+      "8.8 Het risico van de onder dit retentierecht vallende zaken blijft berusten bij de opdrachtgever."
+    ]
+  },
+  {
+    "id": "term-9",
+    "number": "09",
+    "title": "Geheimhouding",
+    "content": [
+      "9.1. Aannemer garandeert de opdrachtgever gegevens van de opdrachtgever vertrouwelijk te behandelen en niet over te dragen aan derden, tenzij de opdrachtgever hiervoor uitdrukkelijk toestemming heeft verleend.",
+      "9.2. Indien aannemer- op grond van een wettelijke bepaling of een rechterlijke uitspraak - gehouden is vertrouwelijke informatie aan door de wet of de bevoegde rechter aangewezen derden te verstrekken en aannemer zich ter zake niet kan beroepen op een wettelijk dan wel door de bevoegde rechter erkend of toegestaan recht van verschoning, dan is aannemer niet gehouden tot schadevergoeding of schadeloosstelling en is de opdrachtgever niet gerechtigd tot ontbinding van de overeenkomst."
+    ]
+  },
+  {
+    "id": "term-10",
+    "number": "10",
+    "title": "Aansprakelijkheid en verjaring",
+    "content": [
+      "10.1. Aannemer kan niet gehouden worden tot het vergoeden van enige schade die een direct of indirect gevolg is van:",
+      "a. een gebeurtenis, die in feite buiten zijn macht ligt en aldus niet aan zijn doen en/of laten kan worden toegeschreven, zoals o.a. omschreven in artikel 14 van deze algemene voorwaarden;",
+      "b. enige daad of nalatigheid van de opdrachtgever, de huurder, hun ondergeschikten, dan wel andere personen, die door of vanwege de opdrachtgever of de huurder te werk zijn gesteld.",
+      "10.2. De opdrachtgever is onder alle omstandigheden verantwoordelijk voor de juistheid en volledigheid van de door hem aangeleverde gegevens. Aannemer is nimmer aansprakelijk voor eventuele schade die (mede) is veroorzaakt doordat de door de opdrachtgever aangeleverde gegevens en verstrekte adviezen onjuist en/of niet volledig of door het opvolgen van de door de opdrachtgever of de huurder gegeven instructies. Opdrachtgever vrijwaart aannemer tegen alle aanspraken ter zake. Indien schade is ontstaan door het opvolgen van aannemer van aanwijzingen van de huurder dan kan aannemer daarvoor nimmer aansprakelijk worden gesteld.",
+      "10.3. De opdrachtgever is gehouden alle schade te vergoeden die aannemer als gevolg van omstandigheden, waarvan de opdrachtgever op de hoogte was of redelijkerwijs had kunnen zijn en waarvan hij aannemer niet in kennis heeft gesteld.",
+      "10.4. Aannemer is niet aansprakelijk voor schade toegebracht door aannemer gedurende de periode dat hij werkzaamheden uitvoert. De opdrachtgever dient ervoor zorg te dragen dat de hiervoor omschreven schade wordt gedekt door zijn verzekering of door de verzekering van de huurder.",
+      "10.5. De opdrachtgever dient zorg te dragen voor en is verantwoordelijk voor veilige werkomstandigheden in de ruimste zin van het woord. Indien de onderaannemer tijdens de uitvoering van de werkzaamheden lichamelijk letsel oploopt of komt te overlijden, dan is de opdrachtgever daarvoor aansprakelijk. De opdrachtgever dient zich tegen de risico’s omschreven in dit artikel goed te hebben verzekerd.",
+      "10.6. Aannemer kan niet aansprakelijk worden gesteld voor schade die inherent is aan dan wel onvermijdelijk is bij het door aannemer op correcte wijze uitvoeren van de overeenkomst.",
+      "10.7. Aannemer kan er niet aansprakelijk voor worden gesteld indien de uitvoering van de overeenkomst niet het door de opdrachtgever verwachte resultaat oplevert.",
+      "10.8. Indien aannemer aansprakelijk mocht zijn voor enigerlei schade, dan is de aansprakelijkheid van aannemer beperkt tot het bedrag van de door de verzekeraar van aannemer gedane uitkering. Indien de verzekeraar in enig geval niet tot uitkering overgaat of de schade niet door de verzekering wordt gedekt, dan is de aansprakelijkheid van aannemer beperkt tot het bedrag dat de opdrachtgever heeft betaald voor de werkzaamheden waarop de aansprakelijkheid betrekking heeft, met een maximum van de betaalde vergoeding van één dag.",
+      "10.9. Aannemer is nimmer aansprakelijk voor indirecte schade, daaronder begrepen gevolgschade, gederfde winst, gemiste omzet, gemiste besparingen, reputatieschade, milieuschade, opgelegde boetes en schade door bedrijfsstagnatie. Werkomstandigheden in de ruimste zin van het woord. Indien de onderaannemer tijdens de uitvoering van de werkzaamheden lichamelijk letsel oploopt of komt te overlijden, dan is opdrachtgever daarvoor aansprakelijk. De opdrachtgever dient zich tegen de risico’s omschreven in dit artikel goed te hebben verzekerd.",
+      "10.10. Vorderingsrechten en andere bevoegdheden van de opdrachtgever uit welken hoofde ook jegens aannemer vervallen in ieder geval na het verstrijken van 1 jaar vanaf het moment waarop zich een feit voordoet dat de opdrachtgever deze rechten en/of bevoegdheden jegens aannemer kan aanwenden.",
+      "10.11. Indien de opdrachtgever goederen en/of materialen en/of voorzieningen ten behoeve van het uitvoeren van de werkzaamheden aan aannemer ter beschikking heeft gesteld en deze goederen en/of materialen en/of voorzieningen niet geschikt zijn voor het doel waarvoor zij aan aannemer ter beschikking zijn gesteld, dan is de opdrachtgever aansprakelijk voor alle schade die daaruit voortvloeit."
+    ]
+  },
+  {
+    "id": "term-11",
+    "number": "11",
+    "title": "Opschorting en ontbinding",
+    "content": [
+      "11.1. Aannemer is gerechtigd de uitvoering van de overeenkomst met onmiddellijke ingang op te schorten indien:",
+      "a. Aannemer bij het uitvoeren van de opdracht dreigt te worden blootgesteld aan voor de gezondheid schadelijke stoffen;",
+      "b. het materiaal waarmee alsmede de omstandigheden waarin de opdracht dient te worden uitgevoerd niet voldoen aan de daaraan door de wet gestelde eisen;",
+      "c. na het sluiten van de overeenkomst aannemer ter kennis is gekomen omstandigheden goede grond geven te vrezen dat de opdrachtgever zijn verplichtingen jegens aannemer niet zal nakomen.",
+      "11.2. Aannemer is, in aanvulling op de gronden vermeld in de wet waarop ontbinding mogelijk is, gerechtigd de overeenkomst met de opdrachtgever zonder rechterlijke tussenkomst geheel of gedeeltelijk met onmiddellijke ingang te ontbinden c.q. te beëindigen, indien de opdrachtgever:",
+      "a. surseance van betaling heeft aangevraagd of dit aan hem is verleend;",
+      "b. in staat van faillissement is verklaard of een faillissementsaanvraag heeft ingediend of in liquidatie treedt;",
+      "c. zijn (betalings)verplichtingen jegens aannemer niet nakomt.",
+      "11.3. Voorts is aannemer bevoegd de overeenkomst te ontbinden indien zich omstandigheden voordoen welke van dien aard zijn dat nakoming van de overeenkomst onmogelijk is of naar maatstaven van redelijkheid en billijkheid niet langer kan worden gevergd dan wel indien zich anderszins omstandigheden voordoen welke van dien aard zijn dat ongewijzigde instandhouding van de overeenkomst in redelijkheid niet mag worden verwacht.",
+      "11.4. Aannemer is in geval van ontbinding van de overeenkomst niet gehouden tot het vergoeden van eventuele directe- noch gevolgschade die de opdrachtgever heeft geleden.",
+      "11.5. Indien de overeenkomst wordt ontbonden of aannemer de uitvoering van de overeenkomst opschort, dan worden de werkzaamheden die tot aan het moment van de ontbinding of opschorting zijn uitgevoerd aan de opdrachtgever gefactureerd, onverminderd het recht van aannemer op vergoeding van schade die hij door de ontbinding of opschorting lijdt of heeft geleden."
+    ]
+  },
+  {
+    "id": "term-12",
+    "number": "12",
+    "title": "Klachten",
+    "content": [
+      "12.1. Klachten over de verrichte werkzaamheden dienen door de opdrachtgever direct schriftelijk aan aannemer kenbaar te worden gemaakt. De ingebrekestelling dient een zo gedetailleerd mogelijke omschrijving van de tekortkoming te bevatten, zodat aannemer in staat is adequaat te reageren.",
+      "12.2. Na het indienen van de klacht dient de opdrachtgever aannemer de gelegenheid te geven de gegrondheid van de klacht te onderzoeken en zo nodig de gelegenheid te geven om alsnog de overeengekomen werkzaamheden te verrichten.",
+      "12.3. Het feit dat aannemer overgaat tot het onderzoeken van een klacht, impliceert niet dat aannemer erkent dat de uitgevoerde werkzaamheden gebrekkig zijn.",
+      "12.4. Klachten schorten de betalingsverplichting van de opdrachtgever niet op.",
+      "12.5. Indien het alsnog verrichten van de overeengekomen werkzaamheden niet meer mogelijk of zinvol is, zal aannemer slechts aansprakelijk zijn binnen de grenzen van artikel 11 van deze algemene voorwaarden."
+    ]
+  },
+  {
+    "id": "term-13",
+    "number": "13",
+    "title": "Overmacht",
+    "content": [
+      "13.1. Onder overmacht wordt in elk geval - maar niet uitsluitend - verstaan: stroomstoring; weersinvloeden; overstromingen; aardverschuivingen; epidemieën; pandemieën; terrorisme; belemmeringen door derden; werkstakingen; verkeersstoring; branden; maatregelen van enige binnenlandse, buitenlandse of internationale overheid; ziekte of persoonlijke (familie) omstandigheden van aannemer; diefstal.",
+      "13.2. In het geval dat aannemer door overmacht wordt verhinderd de werkzaamheden geheel of gedeeltelijk uit te voeren, heeft aannemer het recht om zonder gerechtelijke tussenkomst de uitvoering van de werkzaamheden op te schorten of de overeenkomst geheel of edeeltelijk als ontbonden te beschouwen, zulks naar zijn keuze, zonder dat aannemer gehouden is om enige door de opdrachtgever geleden schade te vergoeden. Hetgeen is bepaald in artikel 10 met betrekking tot opschorting en ontbinding is overeenkomstig op dit lid van toepassing.",
+      "13.3. De werkzaamheden die tot aan het moment van de overmachtssituatie zijn uitgevoerd worden aan de opdrachtgever gefactureerd."
+    ]
+  },
+  {
+    "id": "term-14",
+    "number": "14",
+    "title": "Toepasselijk recht en bevoegde rechter",
+    "content": [
+      "14.1. Op de overeenkomst tussen aannemer en de opdrachtgever is Nederlands recht van toepassing.",
+      "14.2. Alle geschillen ter zake van overeenkomsten tussen aannemer en opdrachtgever worden voorgelegd aan Rechtbank Rotterdam."
+    ]
+  },
+  {
+    "id": "term-15",
+    "number": "15",
+    "title": "Slotbepaling",
+    "content": [
+      "15.1. In deze Algemene Voorwaarden, offertes of in een disclaimer het voorbehoud is aannemer niet aansprakelijk voor 'typefouten’ of voor 'kennelijke typefouten’.",
+      "15.2. In alle gevallen, waarin deze Algemene Voorwaarden niet voorzien, rust de beslissing uitsluitend bij aannemer."
+    ]
+  }
+],
 };

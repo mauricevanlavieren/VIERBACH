@@ -4,6 +4,7 @@ mkdir -p /var/lib/vierbach/data /var/lib/vierbach/uploads
 if [ ! -f /var/lib/vierbach/data/content.json ]; then
     cp /opt/vierbach-seed/data/content.json /var/lib/vierbach/data/content.json
 fi
+php /usr/local/bin/vierbach-migrate-content.php
 cp -n /opt/vierbach-seed/data/.htaccess /var/lib/vierbach/data/.htaccess
 for file in /opt/vierbach-seed/uploads/*; do
     [ -f "$file" ] || continue

@@ -1,1 +1,12 @@
 @import "tailwindcss";
+
+
+@media print {
+  body { background: white; }
+  header, footer, main > :not(#algemene-voorwaarden) { display: none !important; }
+  #algemene-voorwaarden { padding: 0; }
+  #algemene-voorwaarden, #algemene-voorwaarden * { color: black !important; background: white !important; box-shadow: none !important; }
+  #algemene-voorwaarden [id^="term-section-"] { overflow: visible; }
+  #algemene-voorwaarden h3 { break-after: avoid; }
+  #algemene-voorwaarden p { break-inside: avoid; }
+}
